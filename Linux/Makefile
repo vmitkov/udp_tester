@@ -41,17 +41,17 @@ debug: debugbin_dir $(DEBUGEXEFILE1) $(DEBUGEXEFILE2)
 
 release: bin_dir $(EXEFILE1) $(EXEFILE2)
 
-$(DEBUGEXEFILE1): $(srcdir)/$(NAME1)/$(NAME1).c $(DEBUGOBJS)
+$(DEBUGEXEFILE1): $(srcdir)/$(NAME1).c $(DEBUGOBJS)
 	$(CC) $(DEBUGCFLAGS) $(CDEBUG) $< $(DEBUGOBJS) $(DEBUGLIBS) -o $@
 
-$(DEBUGEXEFILE2): $(srcdir)/$(NAME2)/$(NAME2).c $(DEBUGOBJS)
+$(DEBUGEXEFILE2): $(srcdir)/$(NAME2).c $(DEBUGOBJS)
 	$(CC) $(DEBUGCFLAGS) $(CDEBUG) $< $(DEBUGOBJS) $(DEBUGLIBS) -o $@
 
 
-$(EXEFILE1): $(srcdir)/$(NAME1)/$(NAME1).c $(OBJS)
+$(EXEFILE1): $(srcdir)/$(NAME1).c $(OBJS)
 	$(CC) $(CFLAGS) $(COPT) $< $(OBJS) $(LIBS) -o $@
 
-$(EXEFILE2): $(srcdir)/$(NAME2)/$(NAME2).c $(OBJS)
+$(EXEFILE2): $(srcdir)/$(NAME2).c $(OBJS)
 	$(CC) $(CFLAGS) $(COPT) $< $(OBJS) $(LIBS) -o $@
 
 debugbin_dir:
